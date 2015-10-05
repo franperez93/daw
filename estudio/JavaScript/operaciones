@@ -1,0 +1,42 @@
+console.log("hola mundo");
+
+
+//Variables(NO hay que especificar el tipo, a diferencia de JAVA)
+var edad = 23;
+var nombre = "pepe";
+var precio = 25.45;
+
+//operaciones sencillas
+console.log(edad / 2);
+console.log(edad * 2);
+console.log(edad - 2);
+console.log(edad + 2);
+console.log(edad % 2);//el resto de la division
+
+//otras operaciones mas complicadas
+console.log(Math.pow(2,3));//elevar a la potencia
+console.log(Math.round(0.9));//Redondeo
+console.log(Math.ceil(0.8));//redondeo siempre a la alta  
+console.log(Math.floor(0.8));//redondeo siempre a la baja
+console.log(Math.random());//Numero aleatorio entre 0-1
+console.log(Math.sqrt(4));//Raiz cuadrada de ....
+
+
+//Concatenar variables
+var nombre ="Fran";
+var cadena= "hola "+ nombre;
+console.log(cadena);
+
+console.log(cadena.length);//NOs dice la longitud de la cadena(caracteres y espacios)
+var resultado = cadena.indexOf("Fran"); //saber si esa secuencia de caracteres se encuentra en la cadena
+
+/*
+EJ
+if(nombre.indexOf("Fran") != -1){
+ 	console.log("Bienvenido Fran");	  
+}else{
+  	console.log("Fuera intruso");
+}
+*/
+
+

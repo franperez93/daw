@@ -1,0 +1,8 @@
+#voy a ignorar los ficheros acabados en json
+
+*.json
+
+#voy a ignorar tambien los ficheros de config de sublime
+
+*.sublime-project
+*.sublime-workspace
