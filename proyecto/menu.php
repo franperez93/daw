@@ -12,8 +12,10 @@
 
 
 <?php 
-
+	
+	//Creamos la variable que controlara el idioma de nuestro menu
 	$idioma="esp";
+	//Creamos un array para el menu, este contendra varios arrya mas dentro, con sus claves y sus valores
 	$menu=array(
 		"titulo"=>array(
 			"esp"=>"Math Dice",
@@ -26,6 +28,7 @@
 		"juego"=>array(
 			"esp"=>"Juego",
 			"eng"=>"Game",
+			//En el array tambien encontramos un submenu, con diferentes opciones dentro de arrays
 			"submenu"=>array(
 				"juego1"=>array(
 					"esp"=>"Juego 1",
@@ -35,6 +38,10 @@
 				"juego2"=>array(
 					"esp"=>"Juego 2",
 					"eng"=>"Game 2"
+				),
+					"juego3"=>array(
+					"esp"=>"Juego 3",
+					"eng"=>"Game 3"
 				)
 			)
 		),
@@ -44,15 +51,34 @@
 		)
 	);
 
-
+	/* Pasamos a recorrer los arrays
+		
+		Con el primer foreach recorremos la primera parte del array
+		Como tenemos un submenu, necesitaremos de otro foreach para poder recorrerlo hasta el final
+		Utilizaremos "isset" dentro de un condicional ya que tendremos que diferenciar los valores que nos muestra el primer foreach
+		que contiene array y string.
+		
+	*/
 	foreach ($menu as $clave => $valor) { 
+			/*
+				Aqui le decimos que si el $valor que nos devuelve, que es un array tiene la clave "submenu"
+				Entonces procedemos a recorrer este segundo array 
+			*/
+			
 			if(isset($valor['submenu'])){
-				foreach ($valor as $key => $value) {	
-				};
+					foreach ($valor as $key => $value) {	
+					};
 			};
 	};
 
  ?>
+
+<!--Una vez recorrido los arrays y obtenido los datos necesarios, 
+procedemos a introducir esos datos dentro de cada apartado del menu.
+
+para ello, indexando codigo php dentro del html, le pasamos al array $menu
+los valores que queremos que tome en cada lugar y la variable con el idioma en 
+que nos mostrara el resultado.-->
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -69,6 +95,7 @@
           <ul class="dropdown-menu">
             <li><a href="#"><?php print_r($value["juego1"][$idioma]);?></a></li>
             <li><a href="#"><?php print_r($value["juego2"][$idioma]);?></a></li>
+            <li><a href="#"><?php print_r($value["juego3"][$idioma]);?></a></li>
           </ul>
         </li>
         <li><a href="#"><?php print_r($menu["instrucciones"][$idioma]);?></a></li>
