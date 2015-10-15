@@ -75,16 +75,20 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-2"><img src="imagen/dado1.png"/></div>
+
+	<?php
+
+		for ($i=1; $i <=6 ; $i++) { ?>
+			<div class="col-md-2"><img src="imagen/dado<?php echo$i?>.png"/></div>
+		<?php
+		}
+		?>
+
+		<!--<div class="col-md-2"><img src="imagen/dado1.png"/></div>
 		<div class="col-md-2"><img src="imagen/dado2.png"/></div>
 		<div class="col-md-2"><img src="imagen/dado3.png"/></div>
 		<div class="col-md-2"><img src="imagen/dado4.png"/></div>
 		<div class="col-md-2"><img src="imagen/dado5.png"/></div>
-		<div class="col-md-2"><img src="imagen/dado6.png"/></div>
+		<div class="col-md-2"><img src="imagen/dado6.png"/></div>-->
 	</div>
 	<br>
-
-
-
-  
-
