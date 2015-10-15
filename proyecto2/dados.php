@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <?php
 
 
@@ -11,7 +7,8 @@
 	
 
 ?>
- <img src="imagen/caca<?php echo $result ?>.jpg"/>
- 
-</body>
-</html>
+ <div class="row">
+		
+		<div class="col-md-2"><h3>Dado Aleatorio:</h3><img src="imagen/dado<?php echo $result ?>.png"/></div>
+		
+	</div>
