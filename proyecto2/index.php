@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +13,8 @@
         
         <?php
         
-            include 'configuracion.php';
-            include 'dados.php'
+          include 'menu.php';
+          include 'dado.php';
         
         ?>
         
