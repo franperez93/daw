@@ -14,7 +14,7 @@
 <?php 
 	
 	//Creamos la variable que controlara el idioma de nuestro menu
-	$idioma="esp";
+	$idioma="eng";
 	//Creamos un array para el menu, este contendra varios arrya mas dentro, con sus claves y sus valores
 	$menu=array(
 		"titulo"=>array(
@@ -25,7 +25,7 @@
 			"esp"=>"Inicio",
 			"eng"=>"Home"
 		),
-		"juego"=>array(
+		"Juegos"=>array(
 			"esp"=>"Juego",
 			"eng"=>"Game",
 			//En el array tambien encontramos un submenu, con diferentes opciones dentro de arrays
@@ -51,34 +51,8 @@
 		)
 	);
 
-	/* Pasamos a recorrer los arrays
-		
-		Con el primer foreach recorremos la primera parte del array
-		Como tenemos un submenu, necesitaremos de otro foreach para poder recorrerlo hasta el final
-		Utilizaremos "isset" dentro de un condicional ya que tendremos que diferenciar los valores que nos muestra el primer foreach
-		que contiene array y string.
-		
-	*/
-	foreach ($menu as $clave => $valor) { 
-			/*
-				Aqui le decimos que si el $valor que nos devuelve, que es un array tiene la clave "submenu"
-				Entonces procedemos a recorrer este segundo array 
-			*/
-			
-			if(isset($valor['submenu'])){
-					foreach ($valor as $key => $value) {	
-					};
-			};
-	};
 
  ?>
-
-<!--Una vez recorrido los arrays y obtenido los datos necesarios, 
-procedemos a introducir esos datos dentro de cada apartado del menu.
-
-para ello, indexando codigo php dentro del html, le pasamos al array $menu
-los valores que queremos que tome en cada lugar y la variable con el idioma en 
-que nos mostrara el resultado.-->
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -90,13 +64,42 @@ que nos mostrara el resultado.-->
 
       
         <li class="active"><a href="#"><?php print_r($menu["inicio"][$idioma]);?></a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php print_r($menu["juego"][$idioma]);?><span class="caret"></span></a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php print_r($menu["Juegos"][$idioma]);?><span class="caret"></span></a>
        
-          <ul class="dropdown-menu">
-            <li><a href="#"><?php print_r($value["juego1"][$idioma]);?></a></li>
-            <li><a href="#"><?php print_r($value["juego2"][$idioma]);?></a></li>
-            <li><a href="#"><?php print_r($value["juego3"][$idioma]);?></a></li>
-          </ul>
+			          <ul class="dropdown-menu">
+			          	
+			       <?php   	
+			       
+			       
+	/* Pasamos a recorrer los arrays
+		
+		Con el primer foreach recorremos la primera parte del array
+		Como tenemos un submenu, necesitaremos de otro foreach para poder recorrerlo hasta el final
+		Utilizaremos "isset" dentro de un condicional ya que tendremos que diferenciar los valores que nos muestra el primer foreach
+		que contiene array y string.
+		
+	*/
+	
+	
+			      
+			      foreach ($menu as $clave => $valor) { 
+							if(isset($valor['submenu'])){
+								foreach ($valor['submenu'] as $key => $value) {?>
+										<li><a href="#"><?php print_r($value[$idioma]);?></a></li>
+										<?php	
+							  }
+							}
+						}?>
+								</ul>
+								
+								
+							<!--Una vez recorrido los arrays y obtenido los datos necesarios, 
+							procedemos a introducir esos datos dentro de cada apartado del menu.
+							
+							para ello, indexando codigo php dentro del html, le pasamos al array $menu
+							los valores que queremos que tome en cada lugar y la variable con el idioma en 
+							que nos mostrara el resultado.-->
+
         </li>
         <li><a href="#"><?php print_r($menu["instrucciones"][$idioma]);?></a></li>
       </ul>
