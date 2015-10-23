@@ -14,9 +14,16 @@
         <?php
         
           include 'menu.php';
+          include 'funcion.php';
           include 'dado.php';
         
         ?>
         
     </body>
 </html>
+
+<!-- En este apartado, hemos creado un index, que es el que controla los demas php
+y contiene la cabecera y el cuerpo de nuestra pagina web.
+
+En el, mediente los includes llamaremos a los demas php, para recibir su contenido 
+o sus funciones.-->

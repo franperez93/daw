@@ -1,7 +1,5 @@
 <?php 
-	
-	include 'funcion.php';
-	$idioma="esp";
+	$idioma="eng";
 	$menu=array(
 		"titulo"=>array(
 			"esp"=>"Math Dice",
@@ -11,7 +9,7 @@
 			"esp"=>"Inicio",
 			"eng"=>"Home"
 		),
-		"juego"=>array(
+		"Juegos"=>array(
 			"esp"=>"Juego",
 			"eng"=>"Game",
 			"submenu"=>array(
@@ -37,17 +35,7 @@
 	);
 
 
-	foreach ($menu as $clave => $valor) { 
-		
-			if(isset($valor['submenu'])){
-					foreach ($valor as $key => $value) {	
-					};
-			};
-	};
-
  ?>
-
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -58,13 +46,20 @@
 
       
         <li class="active"><a href="#"><?php print_r($menu["inicio"][$idioma]);?></a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php print_r($menu["juego"][$idioma]);?><span class="caret"></span></a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php print_r($menu["Juegos"][$idioma]);?><span class="caret"></span></a>
        
-          <ul class="dropdown-menu">
-            <li><a href="#"><?php print_r($value["juego1"][$idioma]);?></a></li>
-            <li><a href="#"><?php print_r($value["juego2"][$idioma]);?></a></li>
-            <li><a href="#"><?php print_r($value["juego3"][$idioma]);?></a></li>
-          </ul>
+			          <ul class="dropdown-menu">
+			          	
+			       <?php 
+			      foreach ($menu as $clave => $valor) { 
+							if(isset($valor['submenu'])){
+								foreach ($valor['submenu'] as $key => $value) {?>
+										<li><a href="#"><?php print_r($value[$idioma]);?></a></li>
+										<?php	
+							  }
+							}
+						}?>
+							</ul>
         </li>
         <li><a href="#"><?php print_r($menu["instrucciones"][$idioma]);?></a></li>
       </ul>
@@ -72,3 +67,6 @@
   </div>
 </nav>
 
+<!-- Este menu contiene lo mismo que el del proyecto anterior, quitando que la cabecera 
+y el cuerpo del html lo tenemos en el index y alli ya llamamos a este documento para generar
+el menu de nuestra pagina web. -->
