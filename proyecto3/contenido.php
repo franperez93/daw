@@ -13,8 +13,8 @@
 		
 		?>
 		
-		<div class='col-md-2'><h3>Dado 1</h3><img src="imagen/dado<?php echo $dado1?>.png"/></div>
-		<div class='col-md-2 col-md-offset-1'><h3>Dado 2</h3><img src="imagen/dado<?php echo $dado2?>.png"/></div>
+		<div class='col-md-2'><h3>Dado 1</h3><img src="imagen/dado<?=$dado1?>.png"/></div>
+		<div class='col-md-2 col-md-offset-1'><h3>Dado 2</h3><img src="imagen/dado<?=$dado2?>.png"/></div>
 		
 		<div class='col-md-6 col-md-offset-1'><h3>Operaciones</h3>
 			
@@ -22,7 +22,7 @@
 				<div class="form-group">
 					 <label for="dado1">Dado 1</label>
     			  	 <input type="text" class="form-control" name="dado1">
-    			  	 <input type="hidden" name="hidden1" value="<?php echo $dado1?>">
+    			  	 <input type="hidden" name="hidden1" value="<?=$dado1?>">
 				</div>
 				
 				
@@ -33,7 +33,7 @@
 				<div class="form-group">
 				    <label for="dado2">Dado 2</label>
 				    <input type="text" class="form-control" name="dado2">
-				    <input type="hidden" name="hidden2" value="<?php echo $dado2?>">
+				    <input type="hidden" name="hidden2" value="<?= $dado2?>">
 				</div>
 				
 			 	<button type="submit" class="btn btn-primary">Calcular</button>

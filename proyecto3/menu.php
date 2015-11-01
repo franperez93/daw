@@ -41,14 +41,14 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#"><?php print_r($menu["titulo"][$idioma]);?></a>
+      <a class="navbar-brand" href="#"><?=($menu["titulo"][$idioma]);?></a>
     </div>
     <div>
       <ul class="nav navbar-nav">
 
       
-        <li class="active"><a href="#"><?php print_r($menu["inicio"][$idioma]);?></a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php print_r($menu["Juegos"][$idioma]);?><span class="caret"></span></a>
+        <li class="active"><a href="#"><?=($menu["inicio"][$idioma]);?></a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?=($menu["Juegos"][$idioma]);?><span class="caret"></span></a>
        
 			          <ul class="dropdown-menu">
 			          	
@@ -57,14 +57,14 @@
 			      foreach ($menu as $clave => $valor) { 
 							if(isset($valor['submenu'])){
 								foreach ($valor['submenu'] as $key => $value) {?>
-										<li><a href="#"><?php print_r($value[$idioma]);?></a></li>
+										<li><a href="#"><?=($value[$idioma]);?></a></li>
 										<?php	
 							  }
 							}
 						}?>
 								</ul>
         </li>
-        <li><a href="#"><?php print_r($menu["instrucciones"][$idioma]);?></a></li>
+        <li><a href="#"><?=($menu["instrucciones"][$idioma]);?></a></li>
       </ul>
     </div>
   </div>
