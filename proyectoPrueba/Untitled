@@ -1,0 +1,53 @@
+				<div class="form-group col-md-2 col-md-offset-1">
+					<label for="dado1">Dado 1</label>
+				  	<input type="text" class="form-control" name="dado1">
+				  	<input type="hidden" name="hidden1" value="<?=$dado1?>">
+				</div>
+				
+				<div class="form-group col-md-2">
+					<label for="dado1">Dado 2</label>
+				  	<input type="text" class="form-control" name="dado2">
+				    <input type="hidden" name="hidden2" value="<?=$dado2?>">
+				</div>
+				
+				<div class="form-group col-md-2">
+					<label for="dado1">Dado 3</label>
+				  	<input type="text" class="form-control" name="dado3">
+				    <input type="hidden" name="hidden3" value="<?=$dado3?>">
+				</div>
+			
+				<div class="form-group col-md-2">
+					<label for="dado1">Dado 4</label>
+				  	<input type="text" class="form-control" name="dado4">
+				    <input type="hidden" name="hidden4" value="<?=$dado4?>">
+				</div>
+				
+				<div class="form-group col-md-2">
+					<label for="dado1">Dado 5</label>
+				  	<input type="text" class="form-control" name="dado5">
+				    <input type="hidden" name="hidden5" value="<?=$dado5?>">
+				</div>
+	</div>			
+				    <input type="hidden" name="hiddenDode" value="<?=$dodeca?>">
+				    
+	<div class="row">				    
+				<div class="col-md-2 col-md-offset-1">
+					<input type="radio" name="suma1" value="+"><label>Suma</label>
+					<input type="radio" name="resta1" value="-"><label>Resta</label>
+				</div>
+				<div class="col-md-2">
+					<input type="radio" name="suma2" value="+"><label>Suma</label>
+					<input type="radio" name="resta2" value="-"><label>Resta</label>
+				</div>
+				<div class="col-md-2">
+					<input type="radio" name="suma3" value="+"><label>Suma</label>
+					<input type="radio" name="resta3" value="-"><label>Resta</label>
+				</div>	
+				<div class="col-md-2">
+					<input type="radio" name="suma4" value="+"><label>Suma</label>
+					<input type="radio" name="resta4" value="-"><label>Resta</label>
+				</div>	
+				<div class="col-md-2">
+					<input type="radio" name="suma5" value="+"><label>Suma</label>
+					<input type="radio" name="resta5" value="-"><label>Resta</label>
+				</div>
