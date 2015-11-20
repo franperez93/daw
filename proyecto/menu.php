@@ -69,30 +69,15 @@
 			          <ul class="dropdown-menu">
 			          	
 			       <?php   	
-			       
-			       
-	/* Pasamos a recorrer los arrays
-		
-		Con el primer foreach recorremos la primera parte del array
-		Como tenemos un submenu, necesitaremos de otro foreach para poder recorrerlo hasta el final
-		Utilizaremos "isset" dentro de un condicional ya que tendremos que diferenciar los valores que nos muestra el primer foreach
-		que contiene array y string.
-		
-	*/
-	
-	
-			      
+
 			      foreach ($menu as $clave => $valor) { 
 							if(isset($valor['submenu'])){
 								foreach ($valor['submenu'] as $key => $value) {?>
-										<li><a href="#"><?php print_r($value[$idioma]);?></a></li>
-										<?php	
-							  }
+										<li><a href="#"><?php echo($value[$idioma]);?></a></li>
+			   	<?php	}
 							}
 						}?>
 								</ul>
-								
-								
 							<!--Una vez recorrido los arrays y obtenido los datos necesarios, 
 							procedemos a introducir esos datos dentro de cada apartado del menu.
 							

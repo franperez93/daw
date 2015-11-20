@@ -17,7 +17,8 @@ function introduccion(){
             }else{$_SESSION['Juego']->setIdioma('esp');}
             header('Location: contenido.php');
             
-        }else{?>
+        }else{
+?>
            <script>
              alert("Te falta introducir el tipo de juego");
             </script>

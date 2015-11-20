@@ -1,7 +1,7 @@
 <?php 
 	
-	function menu($idioma){
-	$idioma=$idioma;
+	include 'funcion.php';
+	$idioma="esp";
 	$menu=array(
 		"titulo"=>array(
 			"esp"=>"Math Dice",
@@ -16,13 +16,17 @@
 			"eng"=>"Game",
 			"submenu"=>array(
 				"juego1"=>array(
-					"esp"=>"Junior",
-					"eng"=>"Junior"
+					"esp"=>"Juego 1",
+					"eng"=>"Game 1"
 
 				),
 				"juego2"=>array(
-					"esp"=>"Junior+",
-					"eng"=>"Junior+"
+					"esp"=>"Juego 2",
+					"eng"=>"Game 2"
+				),
+					"juego3"=>array(
+					"esp"=>"Juego 3",
+					"eng"=>"Game 3"
 				)
 			)
 		),
@@ -43,8 +47,7 @@
       <ul class="nav navbar-nav">
 
       
-        <!--<li class="active"><a href="#"><?=($menu["inicio"][$idioma]);?></a></li>-->
-        <li><a href="index.php"><?=($menu["inicio"][$idioma]);?></a></li>
+        <li class="active"><a href="#"><?=($menu["inicio"][$idioma]);?></a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?=($menu["Juegos"][$idioma]);?><span class="caret"></span></a>
        
 			          <ul class="dropdown-menu">
@@ -54,19 +57,15 @@
 			      foreach ($menu as $clave => $valor) { 
 							if(isset($valor['submenu'])){
 								foreach ($valor['submenu'] as $key => $value) {?>
-									
-										<li><a href="contenido.php"><?=($value[$idioma]);?></a></li>
+										<li><a href="#"><?=($value[$idioma]);?></a></li>
 										<?php	
 							  }
 							}
 						}?>
 								</ul>
         </li>
-        <li><a href="instrucciones.php"><?=($menu["instrucciones"][$idioma]);?></a></li>
+        <li><a href="#"><?=($menu["instrucciones"][$idioma]);?></a></li>
       </ul>
     </div>
   </div>
 </nav>
-<?php
-}
-?>
