@@ -1,5 +1,12 @@
 <?php
 
+/*
+        creamos la clase juego, donde guardaremos el tipo de juego elegido,
+        el idioma en que queremos que este el juego y tambien algunas funciones
+        de los dados que usaremos en el juego.
+
+*/
+
 	class Juego{
 		
 	public	$idioma="esp";

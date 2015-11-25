@@ -1,5 +1,10 @@
 <?php
 
+/*Creamos una classe jugador donde almacenaremos todos los datos del jugador
+asi como sus puntos, su tirada.
+
+Tambien tendremos los guetters y setters para trabajar con el*/
+
     class Jugador{
         private $nombre="";
         private $apellido="";

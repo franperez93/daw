@@ -1,5 +1,11 @@
 <?php
+		/*En este php, encontramos todo el contenido del juego
 		
+		recibimos parametros del session, tanto para pasar datos del jugador(puntos, nombre, tirada)
+		como el tipo de juego que queremos(junior, junior+) o el idioma en que lo encontraremos(el menu almenos)
+		
+		luego los dados, enviaremos informacion a un js externo, que nos hara todos los calculos y nos devolvera todos 
+		los datos que necesitemos mediante hidden*/
 		require('lib/cabecera.php');
 		require('lib/menu.php');
 		require('lib/Juego.php');
@@ -9,6 +15,7 @@
 		
 		cabecera();
 		menu($_SESSION['Juego']->getIdioma());
+		
 		$puntosObjetivo=5;
 		$_SESSION['Jugador']->setTirada($_POST['hidden']);
 		$puntos=$_SESSION['Jugador']->getPuntos();	
@@ -17,6 +24,9 @@
 				$puntos++;
 				$_SESSION['Jugador']->setPuntos($puntos);	
 			}	
+		}
+		if($_SESSION['Jugador']->getPuntos()==$puntosObjetivo){
+			header('Location: resultado.php');
 		}
 ?>	
 <div class="row">

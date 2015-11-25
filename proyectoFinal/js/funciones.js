@@ -1,7 +1,14 @@
 var numAnterior;
 var op=false;
 var cont=0;
+/*
+Aqui podemos encontrar la logica de los dados, ya que es aqui donde recogemos 
+el valor del dado y lo pasamos al campo de  texto que teneos en el php, asi como tambien
+cuando demos al boton de resolver, es la funcion eval la que se encarga de realizar la operacion
+y devolver el resultado.
 
+
+*/
 
 function numero1(num){
    

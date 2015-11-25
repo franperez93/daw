@@ -2,8 +2,20 @@
 include('Jugador.php');
 include('Juego.php');
 session_start();
+/*
+
+en este documento encontraremos el formulario incial, de donde sacaremos algunos 
+parametros necesarios para iniciar el juego correctammente
+
+*/
 
 function introduccion(){
+    
+    /*En este primer apartado, almacenamos un objeto jugador y juego dentro de el session, que hemos abierto
+    previamente al inicio del php.
+    
+    Luego asignaremos mediante los seters, los valores i parametros a cada objeto que 
+    recibiremos del formulario con un post.*/
     $_SESSION['Jugador'] = new Jugador();
     $_SESSION['Juego'] = new Juego();
      if($_POST['nombre']!=''){
@@ -36,7 +48,12 @@ function introduccion(){
     <div class="row">
         
         <div class="col-md-offset-3 col-md-5">
+           <!-- Aqui nos podemos encontrar el formulario.
+           Este actua sobre este mismo php, asi pasamos los datos, y los almacenamos
+           en session y una vez tengamos esos datos pasados, ya pasaremos al siguiente
+           php con un location.
            
+           Obligatoriamente, el usuario tendra que introducir el nombre y tipo de juego-->
           <form role="form" action="index.php" method="post" id="datos">  
                 <h1>Datos del Jugador</h1>
             <div class="form-group">
