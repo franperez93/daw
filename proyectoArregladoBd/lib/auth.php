@@ -1,55 +1,37 @@
 <?php
-    
-    //require('conexionBd.php');
+   
     require('lib/cabecera.php');
 	require('lib/menu.php');
-    
+	
     require_once('Juego.php');
-    require_once('Jugador.php');  
+    require_once('Jugador.php');
+    require_once('conexionBd.php');
     session_start();
-    
+
     cabecera();
+    $baseDatos = new BaseDatos();
     
-    function creaSesion(){
-        
-        if(!isset($_SESSION['Jugador']) || strlen($_SESSION['Jugador']->getNombre())==0){    
-            //if(strlen($_POST['nombre'])>0){
+        if(!isset($_SESSION['Jugador']) || strlen($_SESSION['Jugador']->getNombre())==0){ 
+            if(isset($_POST['accion'])&& $_POST['accion']=="datosUsuario"){
                 $_SESSION['Jugador'] = new Jugador();
                 $_SESSION['Juego'] = new Juego();
-                //if(isset($_POST['juego'])){
-                    $_SESSION['Jugador']->setNombre($_POST['nombre']);
-                    $_SESSION['Jugador']->setApellido($_POST['apellido']);
-                    $_SESSION['Jugador']->setEdad($_POST['edad']);
+               if($jugadorBd=$baseDatos->comprobarUser($_POST['email'])){
+                    $_SESSION['Jugador']->setNombre($jugadorBd['nombre']);
+                    $_SESSION['Jugador']->setApellido($jugadorBd['apellido']);
+                    $_SESSION['Jugador']->setEdad($jugadorBd['edad']);
+                    $_SESSION['Jugador']->setEmail($_POST['email']);
                     $_SESSION['Juego']->setJuego($_POST['juego']);
                     if(isset($_POST['idioma'])){
                         $_SESSION['Juego']->setIdioma($_POST['idioma']);
                     }else{
                         $_SESSION['Juego']->setIdioma('esp');
                     }
-               // }
-           // }
-        }
-    }
-    
-    /*
-    function editaSesion(){
-        
-        if(isset($_SESSION['Jugador']) || strlen($_SESSION['Jugador']->getNombre())!=0){    
-            $_SESSION['Jugador']->setNombre($_POST['nombre']);
-            $_SESSION['Jugador']->setApellido($_POST['apellido']);
-            $_SESSION['Jugador']->setEdad($_POST['edad']);
-            $_SESSION['Juego']->setJuego($_POST['juego']);
-            if(isset($_POST['idioma'])){
-                $_SESSION['Juego']->setIdioma($_POST['idioma']);
-            }else{
-               // $_SESSION['Juego']->setIdioma('esp');
-            }
-        }
-    }
-    */
-    
+                }
+            }    
+        }       
+ 
     function tiradaJugador(){
-        $puntosObjetivo=5;
+       $puntosObjetivo=5;
 		$_SESSION['Jugador']->setTirada($_POST['hidden']);
 		$puntos=$_SESSION['Jugador']->getPuntos();	
 		if($_POST['hidden']!=0){

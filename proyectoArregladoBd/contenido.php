@@ -2,21 +2,23 @@
     
     require('lib/auth.php');
 
-	creaSesion();
-	
 	if(!isset($_SESSION['Jugador']) || strlen($_SESSION['Jugador']->getNombre())==0){   
 	   header('Location: index.php');
 	}
-	
 	menu($_SESSION['Juego']->getIdioma());
 	
 	tiradaJugador();
+	
+	var_dump($_SESSION['Jugador']);
+	var_dump($jugadorBd);
+	
+	//$_SESSION['Jugador']->getNombre()
 	
 ?>
 <div class="row">
 	<div class="col-md-2">
 		<div class="dropdown" id="menu2">
-		  <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown"><?=$_SESSION['Jugador']->getNombre()." ".$_SESSION['Jugador']->getApellido()?><span class="caret"></span></button>
+		  <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown"><?=$baseDatos->prueba("pepe")." ".$_SESSION['Jugador']->getApellido()?><span class="caret"></span></button>
 		  <ul class="dropdown-menu" id="result">
 		  	<br>
 		    <table class="table">

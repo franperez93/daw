@@ -3,7 +3,7 @@
     class BaseDatos{
         
         private $host='localhost';
-        private $db='pruebaBd';
+        private $db='MathDice';
         private $user='franperez93';
         private $pass='';
         private $conexion;
@@ -51,10 +51,10 @@ EOF;
                         $resultadohtml=$resultadohtml.$fila["apellido"];
                     $resultadohtml=$resultadohtml."</td>";
                     $resultadohtml=$resultadohtml."<td>";
-                        $resultadohtml=$resultadohtml.$fila["edad"];
+                        $resultadohtml=$resultadohtml.$fila["email"];
                     $resultadohtml=$resultadohtml."</td>";
                     $resultadohtml=$resultadohtml."<td>";
-                        $resultadohtml=$resultadohtml.$fila["sexo"];
+                        $resultadohtml=$resultadohtml.$fila["edad"];
                     $resultadohtml=$resultadohtml."</td>";
                 $resultadohtml=$resultadohtml."</tr>";
                  
@@ -70,20 +70,30 @@ EOF;
        
     }
     
-    function otros(){
+    function comprobarUser($correo){
         
-    $sql = "SELECT nombre FROM usuarios";
-    $result = $this->conexion->query($sql);
+        $sql = "SELECT * FROM usuarios WHERE nombre='$correo'";
+        $result = $this->conexion->query($sql);
+        $fila = $result->fetch_assoc();
+           if($fila!=null){
+            return $fila;
+        }else{
+            return false;
+        }    
+    } 
     
-    while($fila = mysqli_fetch_assoc($result)){
-        if($fila['nombre']==$_POST['nombre']){
-                echo("hola"); 
-         }
-     }
+    function insertarUser($nombre,$apellido,$email,$edad){
         
+        $sql = "INSERT INTO usuarios (nombre,apellido,email,edad)
+        VALUES ('".$nombre."','".$apellido."','".$email."','".$edad."')";
+        $this->conexion->query($sql);
+        return $mysqli->insert_id;
         
     }
-    
- }
+}    
 
 ?>
+
+
+
+

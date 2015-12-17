@@ -1,8 +1,6 @@
 <?php
     
     require('lib/auth.php');
-
-	creaSesion();
 	
 	if(!isset($_SESSION['Jugador']) || strlen($_SESSION['Jugador']->getNombre())==0){   
 	   header('Location: index.php');

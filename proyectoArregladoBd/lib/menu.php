@@ -33,17 +33,14 @@
 	);
 
  ?>
-
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="#"><?=($menu["titulo"][$idioma]);?></a>
     </div>
     <div>
-      <ul class="nav navbar-nav">
-
-      
-        <!--<li class="active"><a href="#"><?=($menu["inicio"][$idioma]);?></a></li>-->
+      <ul class="nav navbar-nav" role="menu">
+      	
         <li><a href="index.php"><?=($menu["inicio"][$idioma]);?></a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?=($menu["Juegos"][$idioma]);?><span class="caret"></span></a>
        
@@ -63,6 +60,7 @@
         </li>
         <li><a href="instrucciones.php"><?=($menu["instrucciones"][$idioma]);?></a></li>
       </ul>
+      <div class="navbar-text navbar-right"><?=$_SESSION['Jugador']->getEmail()?></div>
     </div>
   </div>
 </nav>

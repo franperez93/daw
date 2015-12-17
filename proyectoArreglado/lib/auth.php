@@ -10,8 +10,6 @@
     
     cabecera();
     
-    function creaSesion(){
-        
         if(!isset($_SESSION['Jugador']) || strlen($_SESSION['Jugador']->getNombre())==0){    
             //if(strlen($_POST['nombre'])>0){
                 $_SESSION['Jugador'] = new Jugador();
@@ -29,7 +27,6 @@
                // }
            // }
         }
-    }
     
     /*
     function editaSesion(){

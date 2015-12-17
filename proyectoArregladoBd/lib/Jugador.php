@@ -9,6 +9,7 @@ Tambien tendremos los guetters y setters para trabajar con el*/
         private $nombre="";
         private $apellido="";
         private $edad=0;
+        private $email="";
         private $puntos=0;
         private $tirada=0;
         
@@ -29,6 +30,13 @@ Tambien tendremos los guetters y setters para trabajar con el*/
         }
          public function setEdad($edad){
             $this->edad=$edad;
+        }
+        
+         public function getEmail(){
+            return $this->email;
+        }
+        public function setEmail($email){
+            $this->email=$email;
         }
         
         public function getPuntos(){
