@@ -1,8 +1,6 @@
 <?php
-
-         include 'lib/cabecera.php';
-          //include 'lib/menu.php';
-          include 'lib/formularios.php';
+    include 'lib/cabecera.php';
+    include 'lib/formularios.php';
 ?>
 
 <!DOCTYPE html>

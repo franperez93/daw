@@ -1,0 +1,82 @@
+
+body{
+    
+    background-color: #2D6B90;
+    
+}
+
+#datos{
+   padding:1em;
+    border-radius: 13px 13px 13px 13px;
+    -moz-border-radius: 13px 13px 13px 13px;
+    -webkit-border-radius: 13px 13px 13px 13px;
+   border: 2px solid;
+   background-color: #00BE5D;
+   opacity: 0.9;
+   filter: alpha(opacity=90)
+}
+#instruccion{
+    top:20%;
+    left:28%;
+    position:fixed;
+    height: auto;
+    width: 600px;
+    background-color: #00BE5D;
+    text-align:center;
+    /*Redondeando Bordes*/
+    border-radius: 13px 13px 13px 13px;
+    -moz-border-radius: 13px 13px 13px 13px;
+    -webkit-border-radius: 13px 13px 13px 13px;
+    border: 1px solid #000000;
+}
+#result{
+    background-color:#00BE5D;
+}
+#dados,#dados1,#dados2,#dados3,#dados4,#dados5{
+    width: 150px;
+    height: 150px;
+}
+
+#Ctexto{
+    height: 60px;
+    font-size: x-large ;
+    text-align: center;
+}
+/*Div donde va el cuadro de texto donde van los numeros con las operaciones*/
+#operaciones{
+    padding:20px;
+    background-color: #00BE5D;
+}
+#operadores{
+    width: 170px;
+    height: 170px;
+   
+}
+
+.btn3d {
+    position:relative;
+    top: -6px;
+    border:0;
+     transition: all 40ms linear;
+     margin-top:10px;
+     margin-bottom:10px;
+     margin-left:2px;
+     margin-right:2px;
+}
+.btn3d:active:focus,
+.btn3d:focus:hover,
+.btn3d:focus {
+    -moz-outline-style:none;
+         outline:medium none;
+}
+.btn3d:active, .btn3d.active {
+    top:2px;
+}
+.btn3d.btn-danger {
+    box-shadow:0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#D73814;
+}
+.btn3d.btn-danger:active, .btn3d.btn-danger.active {
+    box-shadow:0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #D73814;
+}

@@ -1,13 +1,21 @@
 <?php
 include('Jugador.php');
 include('Juego.php');
+require('lib/conexionBd.php');
 session_start();
+
 /*
 
 en este documento encontraremos el formulario incial, de donde sacaremos algunos 
 parametros necesarios para iniciar el juego correctammente
 
 */
+
+ $db  = new BaseDatos();
+ 
+  echo $db->otros();
+ 
+ 
 
 function introduccion(){
     
@@ -20,7 +28,7 @@ function introduccion(){
     $_SESSION['Juego'] = new Juego();
      if($_POST['nombre']!=''){
         if(isset($_POST['juego'])){
-         $_SESSION['Jugador']->setNombre($_POST['nombre']);
+        $_SESSION['Jugador']->setNombre($_POST['nombre']);
         $_SESSION['Jugador']->setApellido($_POST['apellido']);
         $_SESSION['Jugador']->setEdad($_POST['edad']);
         $_SESSION['Juego']->setJuego($_POST['juego']);
@@ -43,6 +51,7 @@ function introduccion(){
  <div class="row">
     <div class="col-md-offset-4 col-md-3">
             <img src="imagen/mathdice.png"></img>
+            <button class="btn btn-danger"><a href="ejemploBD.php">BBDD</a></button>
     </div>
 </div>    
     <div class="row">
