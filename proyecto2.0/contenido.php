@@ -8,7 +8,6 @@
 	
 	menu($_SESSION['Juego']->getIdioma());
 	
-	
 	//var_dump($_SESSION['Jugador']);
 	//var_dump($jugadorBd);
 	

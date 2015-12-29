@@ -30,10 +30,17 @@
         }    
     } 
     
-     function insertarUser($nombre,$apellido,$email,$edad){
+    function contrasenya($correo){
+        $sql = "SELECT pass FROM usuarios WHERE email='$correo'";
+        $result = $this->conexion->query($sql);
+        $fila= $result->fetch_assoc();
+        return $fila['pass'];
+    }
+    
+     function insertarUser($nombre,$apellido,$email,$passw,$edad){
         
-        $sql = "INSERT INTO usuarios (nombre,apellido,email,edad)
-        VALUES ('$nombre','$apellido','$email','$edad')";
+        $sql = "INSERT INTO usuarios (nombre,apellido,email,pass,edad)
+        VALUES ('$nombre','$apellido','$email','$passw','$edad')";
         $this->conexion->query($sql);
         return $mysqli->insert_id;
         

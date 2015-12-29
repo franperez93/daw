@@ -13,9 +13,10 @@
     </head>
     <body>
        <?php 
-        $db->insertarUser("pepe","addasd","muslodepollo@gmasdh.com",22);
-       echo $db->usuariosHTMl();
-         echo $db->comprobarUser("pepe");
+        //$db->insertarUser("pepe","addasd","muslodepollo@gmasdh.com",22);
+       //echo $db->usuariosHTMl();
+         echo($db->contrasenya('kiko.8@gmail.com'));
+          var_dump($db->comprobarUser('kiko.8@gmail.com'));
         
          
          ?>
