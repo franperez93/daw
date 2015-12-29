@@ -58,40 +58,22 @@
 								</form>
 								<form id="register-form" action="contenido.php" method="post" role="form" style="display: none;">
 									<input type="hidden" name="accion" value="registro"/>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-user"></span>
-										</div>
+									<div class="form-group">
 										<input type="text" name="nombre" id="nombre" tabindex="1" class="form-control" placeholder="Nombre" value="" required>
 									</div>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-user"></span>
-										</div>
+									<div class="form-group">
 										<input type="text" name="apellido" id="apellido" tabindex="1" class="form-control" placeholder="Apellidos" value="" required>
 									</div>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-calendar"></span>
-										</div>
+									<div class="form-group">
 										<input type="text" name="edad" id="edad" tabindex="1" class="form-control" placeholder="Edad" value="" required>
 									</div>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-envelope"></span>
-										</div>
+									<div class="form-group">
 										<input type="email" name="correo" id="correo" tabindex="1" class="form-control" placeholder="Email" value="" required>
 									</div>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-lock"></span>
-										</div>
+									<div class="form-group">
 										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña" required>
 									</div>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-lock"></span>
-										</div>
+									<div class="form-group">
 										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar Contraseña" required>
 									</div>
 									<div class="form-group">
