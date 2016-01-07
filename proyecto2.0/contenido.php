@@ -1,6 +1,6 @@
 <?php
     
-    require('lib/auth.php');
+    require_once('lib/auth.php');
 
 	if(!isset($_SESSION['Jugador']) || strlen($_SESSION['Jugador']->getNombre())==0){   
 	   header('Location: index.php');

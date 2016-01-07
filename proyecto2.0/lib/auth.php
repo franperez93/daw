@@ -31,11 +31,9 @@
                         }
                     }else{
                         header('Location: index.php');
-                        echo("error contraseña");
                     }
-                }else{
+                }else{                        
                     header('Location: index.php');
-                    echo("email no existe");
                 }
             }else if($_POST['accion']=="registro"){
                 if(!$baseDatos->comprobarUser($_POST['correo'])){
@@ -54,12 +52,12 @@
                             $_SESSION['Juego']->setIdioma('esp');
                         }
                     }else{
+                        echo'<script language="javascript">alert("Las contraseñas no coinciden.");</script>';
                         header('Location: index.php');
-                        echo("contraseña no coincide");
                     }    
                 }else{
+                    echo'<script>alert("Este email ya existe");</script>';
                     header('Location: index.php');
-                    echo("email ya existe");
                 }
             }    
         }       
